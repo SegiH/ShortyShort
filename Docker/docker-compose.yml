@@ -1,0 +1,20 @@
+version: '3.7'
+
+networks:
+   default:
+      name: SegiNet
+      external: true
+
+services:
+   watchlist:
+     container_name: ShortyShort
+     image: shortyshort
+     volumes:
+       - /home/segi/Desktop/ShortyShort/database.json:/app/database.json
+     ports:
+       - 8080:8000
+     environment:
+       - NODE_ENV=production
+     networks:
+       - default
+     restart: always

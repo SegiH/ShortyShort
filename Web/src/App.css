@@ -1,0 +1,161 @@
+.centerAligned {
+     position: relative;
+     text-align: center;
+     top: 35%;
+}
+
+.editIcon {
+  position: relative;
+  margin-left: 10px;
+  top:3px;
+}
+
+.errorMessage {
+  color: #c0392b;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.font-family {
+     font-family: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.formContainer {
+  max-width: 600px;
+  margin: 2rem auto; /* center container */
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.formGroup {
+  display: inline-block;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.formGroup label,.formLabel {
+  margin-bottom: 0.5rem; /* space between label and input */
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.formGroupSection {
+  display: inline-flex;
+}
+
+.inputStyle {
+     border-radius: 22px;
+     font-family: "Pt Sans", helvetica, sans-serif;
+     line-height: 1.6em;
+     font-size: 1em;
+     width: fit-content;
+}
+
+.inputStyle,
+.selectStyle {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+  width: 80%;
+  box-sizing: border-box;
+}
+
+.inputStyle:focus,
+.selectStyle:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.leftMargin30 {
+  margin-left: 30px;
+}
+
+.leftMargin65 {
+  margin-left: 65px;
+}
+
+.resultMessage {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #e6f4ea;
+  border: 1px solid #27ae60;
+  border-radius: 6px;
+  color: #27ae60;
+  font-size: 1rem;
+  word-break: break-word;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.submit-button {
+  display: block;          /* make it block-level */
+  margin: 1rem auto 0;     /* top margin + auto left/right to center */
+  padding: 0.7rem 1.5rem;  /* adjust padding to your liking */
+  background-color: #007bff;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+  width: auto;             /* remove full width */
+  min-width: 120px;        /* optional: keep a minimum width */
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.selectStyle {
+     max-width: 250px;
+     border: 1px solid #999;
+     font-size: 18px;
+     color: #1c87c9;
+     background-color: #eee;
+     border-radius: 5px;
+}
+
+.toolbar {
+  background: linear-gradient(90deg, #4a90e2 0%, #357ABD 100%);
+  color: white;
+  height: 80px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.toolbarContent {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* space between icon and text */
+}
+
+.toolbarIcon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.titleText {
+  font-weight: 700;
+  font-size: 24px;
+  margin: 0;
+  letter-spacing: 1.2px;
+}

@@ -1,0 +1,24 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradB" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#26A69A"/>
+      <stop offset="1" stop-color="#80CBC4"/>
+    </linearGradient>
+    <filter id="shadowB" x="0" y="0" width="64" height="64" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <rect width="64" height="64" rx="16" fill="url(#gradB)" filter="url(#shadowB)"/>
+
+  <!-- URL bar -->
+  <rect x="12" y="20" width="40" height="16" rx="6" fill="white"/>
+
+  <!-- 'https://' stylized lines -->
+  <rect x="16" y="24" width="22" height="3" rx="1" fill="#00796B"/>
+  <rect x="16" y="29" width="32" height="3" rx="1" fill="#4DB6AC"/>
+
+  <!-- Shrinking arrow -->
+  <path d="M32 40L32 52" stroke="#00796B" stroke-width="4" stroke-linecap="round"/>
+  <path d="M26 46L32 52L38 46" stroke="#00796B" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

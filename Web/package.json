@@ -1,0 +1,42 @@
+{
+  "name": "reactwebpacktemplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production",
+    "serve": "webpack serve --mode development",
+    "dev": "webpack serve --config ./src/index.js",
+    "dev-unix": "if [ ! -d node_modules ]; then npm install; fi && cd ../API && if [ ! -d node_modules ]; then npm install; fi && cd ../Web && concurrently \"npm run api-unix\" \"npm run serve\"",
+    "dev-windows": "cmd /c LaunchWindowsBuildDev.cmd",
+    "run-unix": "if [ ! -d node_modules ]; then npm install; fi && npm run build && cd ../API && if [ ! -d node_modules ]; then npm install; fi && nodemon ShortyShortAPI.js",
+    "run-windows": "cmd /c LaunchWindowsBuild.cmd",
+    "build-unix": "cd .. && ./buildShortyShort.sh",
+    "build-windows": "cd .. && powershell -file buildShortyShort.ps1",
+    "api-unix": "cd ../API && nodemon ShortyShortAPI.js",
+    "api-windows": "cd ..\\API && nodemon ShortyShortAPI.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.1.2",
+    "dotenv-webpack": "^8.0.1",
+    "html-webpack-plugin": "^5.5.0",
+    "nodemon": "^3.1.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1",
+    "webpack": "^5.99.5",
+    "webpack-cli": "^5.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.7.3",
+    "file-loader": "^6.2.0",
+    "style-loader": "^3.3.1",
+    "webpack-dev-server": "^4.11.1"
+  }
+}
