@@ -342,25 +342,31 @@ const writeDB = async (newDB) => {
 	await writeFile(dbFile, JSON.stringify(newDB))
 }
 
-// Validation
-const dbExists = fs.existsSync(dbFile);
+// When "validate" argument is passed, run validation tests
+if (process.argv.length > 2 && process.argv[2] === "validate") {
+	const dbExists = fs.existsSync(dbFile);
 
-if (!dbExists) {
-	throw new Error("Database file not found");
-}
+	if (!dbExists) {
+		console.log("ERROR!!! Database file database.json was not found.");
+		process.exit(1);
+	}
 
-const db = getDB();
+	const db = getDB();
 
-if (typeof db.ShortCodes === "undefined") {
-	throw new Error("ShortCodes attribute is missing");
-}
+	if (typeof db.ShortCodes === "undefined") {
+		console.log("ERROR!!! ShortCodes attribute is missing");
+		process.exit(1);
+	}
 
-if (baseURL == "") {
-	throw new Error("Base URL is not set");
-}
+	if (baseURL == "") {
+		console.log("ERROR!!! Base URL is not set");
+		process.exit(1);
+	}
 
-if (process.env.ADMIN_ENABLED === "true" && process.env.ADMIN_PASSWORD === "12345") {
-	throw new Error("Admin is enabled but the password was not changed. Please set an admin password");
+	if (process.env.ADMIN_ENABLED === "true" && process.env.ADMIN_PASSWORD === "12345") {
+		console.log("ERROR!!! Admin is enabled but the password was not changed. Please set an admin password");
+		process.exit(1);
+	}
 }
 
 inactiveExpiredShortCodes();
