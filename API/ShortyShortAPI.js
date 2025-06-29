@@ -8,7 +8,6 @@ const path = require("path");
 const process = require("process");
 const QRCode = require('qrcode');
 const { writeFile } = require('fs/promises');
-const { error } = require('console');
 require('dotenv').config();
 const app = express();
 
