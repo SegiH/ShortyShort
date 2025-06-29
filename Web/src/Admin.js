@@ -6,11 +6,11 @@ import { DataContext } from "./data-context";
 const Admin = () => {
      const navigate = useNavigate();
 
-     const [authenticated, setAuthenticated] = useState(true); // TODO: change me!!
+     const [authenticated, setAuthenticated] = useState(false);
      const [data, setData] = useState([]);
      const [editingShortCode, setEditingShortCode] = useState(null);
      const [newExpirationDate, setNewExpirationDate] = useState("");
-     const [password, setPassword] = useState("qweqweqwe"); // TODO: change me!!
+     const [password, setPassword] = useState("");
      const [searchTerm, setSearchTerm] = useState("");
 
      const {
