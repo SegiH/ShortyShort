@@ -342,6 +342,8 @@ const writeDB = async (newDB) => {
 	await writeFile(dbFile, JSON.stringify(newDB))
 }
 
+const db = getDB();
+
 // When "validate" argument is passed, run validation tests
 if (process.argv.length > 2 && process.argv[2] === "validate") {
 	const dbExists = fs.existsSync(dbFile);
@@ -350,8 +352,6 @@ if (process.argv.length > 2 && process.argv[2] === "validate") {
 		console.log("ERROR!!! Database file database.json was not found.");
 		process.exit(1);
 	}
-
-	const db = getDB();
 
 	if (typeof db.ShortCodes === "undefined") {
 		console.log("ERROR!!! ShortCodes attribute is missing");
