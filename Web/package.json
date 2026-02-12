@@ -8,7 +8,7 @@
     "build": "webpack --mode production",
     "serve": "webpack serve --mode development",
     "dev": "webpack serve --config ./src/index.js",
-    "dev-unix": "if [ ! -d node_modules ]; then npm install; fi && cd ../API && if [ ! -d node_modules ]; then npm install; fi && node ShortyShortAPI.js validate && cd ../Web && concurrently \"npm run api-unix\" \"npm run serve\"",
+    "dev-unix": "if [ ! -d node_modules ]; then npm install; fi && if [ ! -d dist ]; then npm install; fi && cd ../API && if [ ! -d node_modules ]; then npm install; fi && node ShortyShortAPI.js validate && cd ../Web && concurrently \"npm run api-unix\" \"npm run serve\"",
     "dev-windows": "cmd /c LaunchWindowsBuildDev.cmd",
     "run-unix": "if [ ! -d node_modules ]; then npm install; fi && npm run build && cd ../API && if [ ! -d node_modules ]; then npm install; fi && nodemon ShortyShortAPI.js",
     "run-windows": "cmd /c LaunchWindowsBuild.cmd",
@@ -27,7 +27,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.1",
-    "webpack": "^5.99.5",
+    "webpack": "^5.105.1",
     "webpack-cli": "^5.0.1"
   },
   "devDependencies": {

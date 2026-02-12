@@ -14,6 +14,7 @@ ShortyShort is ~5MB for both the front end client and API and ~125MB in Docker.
 1. Edit Web/.env and set REACT_APP_APIURL
 1. Change the default admin password in API/.env if you enabled the admin dashboard
 1. Add the hostname for the web app to CORS_DOMAINS in API/.env
+1. Run `npm run build` in Web.
 
 ## Running ShortyShort
 1. Complete all Using ShortyShort steps above
