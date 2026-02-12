@@ -8,21 +8,31 @@ The goal of this project is to have a private self hosted URL shortening service
 
 ShortyShort is ~5MB for both the front end client and API and ~125MB in Docker.
 
-## Running ShortyShort
 
-1. Go to Web folder.
+## Using ShortyShort
+1. For better security, change the default allowed hosts line in webpack.config.js from `allowedHosts: 'all',` to `allowedHosts: [ '192.168.1.25', 'https://shortyshort.domain.com' ],` which are the IP addresses or host that the Shorty Short web app will be available at.
+1. Edit Web/.env and set REACT_APP_APIURL
+1. Change the default admin password in API/.env if you enabled the admin dashboard
+1. Add the hostname for the web app to CORS_DOMAINS in API/.env
+
+## Running ShortyShort
+1. Complete all Using ShortyShort steps above
 1. If you are using Linux/Unix, run `npm run run-unix`.
 1. If you are on Windows run `npm run run-windows`.
 1. Visit [this link](http://localhost:8080) in your browser.
 
 ## Installing ShortyShort
-
-1. Go to Web folder.
+1. Complete all Using ShortyShort steps above
 1. If you are using Linux/Unix, run 'chmod +x ../buildShortyShort.sh`
 1. If you are using Linux/Unix, run `npm run build-unix`.
 1. If you are on Windows run `npm run build-windows`.
 1. If you want to build a Docker container, add the parameter --docker. You will need to edit the file docker-compose.yml first and adjust it to your needs. 
 1. If you do not want to build a Docker container, you can copy the contents of the output folder to your web server.
+
+## Developing ShortyShort
+1. Complete all Using ShortyShort steps above
+1. If you are using Linux/Unix, run `npm run dev-unix`.
+1. If you are on Windows run `npm run dev-windows`.
 
 When ShortyShort ShortCodes expire, they are automatically marked as inactive.
 
@@ -30,13 +40,13 @@ ShortyShort keeps analytics about how many times a short code was used. For priv
 
 ## Configuration
 
-There are options that you can customize in API\.env
+There are options that you can customize in API/.env
 
 Any time you make changes to .env, you have to restart the aopplication to make it take effect.
 
 ADMIN_ENABLED: If you set this to true, it enabled the admin dashboard. You can navigate to /admin and view the existing ShortyShort short codes. The Admin dashboard allow allows you to activate or deactivate a short code or change the expiration date of a short code.
 
-ADMIN_PASSWORD: If ADMIN_ENABLED is true, you must set a password that will be used to access the password admin. The admin allows you yo activate or deactivate ShortyShort codes.
+ADMIN_PASSWORD: If ADMIN_ENABLED is true, you must set a password that will be used to access the password admin. The admin allows you to activate or deactivate ShortyShort codes.
 
 ADVANCED_ANALYTICS: If you set this to true, when a short code is used, the user agent is also saved. There may be additional analytics saved in the future.
 
